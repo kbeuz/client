@@ -48,7 +48,7 @@ const VideoOrImagePostCard = ({
           className={`font-medium text-white ${
             isPrimary
               ? "text-2xl w-[90%] max-md:text-xl"
-              : "text-base w-full break-all"
+              : "text-sm w-full break-all"
           }`}
         >
           {getPreferredLanguage(

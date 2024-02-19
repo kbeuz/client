@@ -95,7 +95,12 @@ const Post = () => {
 
           <div className="grid grid-cols-1 gap-5">
             {postData.recommended.map((item) => (
-              <CardPrimary key={item.id} size="sm" data={item} />
+              <CardPrimary
+                key={item.id}
+                size="sm"
+                data={item}
+                titleLength={60}
+              />
             ))}
           </div>
         </div>

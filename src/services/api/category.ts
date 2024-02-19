@@ -2,7 +2,7 @@ import { api } from "../configs";
 
 class Category {
   async fetchCategories() {
-    return await api.get("/category");
+    return await api.get("/category?requestBy=USER");
   }
 }
 

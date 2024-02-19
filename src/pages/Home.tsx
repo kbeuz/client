@@ -78,7 +78,7 @@ const Home = () => {
 
               <div className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
                 {postsList?.latest?.map((posts) => (
-                  <CardPrimary key={posts.id} data={posts} />
+                  <CardPrimary key={posts.id} data={posts} titleLength={100} />
                 ))}
               </div>
             </div>

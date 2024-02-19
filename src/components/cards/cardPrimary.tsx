@@ -4,19 +4,20 @@ import { SinglePostType } from "../../types";
 import { dateFormatter, getPreferredLanguage, wordSlicer } from "../../lib";
 
 const CardPrimary = ({
-  size = "base",
   data,
+  titleLength = 100,
 }: {
   size?: "sm" | "base";
   data: SinglePostType;
+  titleLength: number;
 }) => {
   return (
     <Link to={`/post/${data?.id}`} className="flex gap-4 max-md:flex-col">
-      <div className="w-[120px] min-h-20 max-md:w-full">
+      <div className="w-[150px] min-h-20 max-md:w-full">
         <img src={data?.cover_image} className={`rounded-lg h-full bg-cover`} />
       </div>
 
-      <div className="flex flex-col justify-center max-md:gap-0 w-[300px]">
+      <div className="flex flex-col gap-1 justify-center max-md:gap-2 w-[400px] max-lg:w-[300px]">
         <h1 className={`text-base dark:text-white font-medium break-normal`}>
           {wordSlicer(
             getPreferredLanguage(
@@ -24,11 +25,13 @@ const CardPrimary = ({
               data?.title_en,
               data?.title_ru,
               data?.title_krill
-            )
+            ),
+            titleLength,
+            titleLength
           )}
         </h1>
 
-        <div className="flex items-center gap-3 text-sm opacity-50 mt-1 max-md:text-[11px]">
+        <div className="flex items-center gap-3 text-sm opacity-50 mt-1 max-md:text-sm">
           <h1>{dateFormatter(data?.createdAt)}</h1>
           <div className="flex gap-1 items-center">
             <ViewsIcon className="text-base mt-[2px]" />
