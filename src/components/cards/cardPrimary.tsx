@@ -17,7 +17,7 @@ const CardPrimary = ({
         <img src={data?.cover_image} className={`rounded-lg h-full bg-cover`} />
       </div>
 
-      <div className="flex flex-col gap-1 justify-center max-md:gap-2 max-w-[400px] ">
+      <div className="flex flex-col gap-1 justify-center max-md:gap-2 xl:w-[400px] md:max-w-[400px]">
         <h1 className={`text-base dark:text-white font-medium break-normal`}>
           {wordSlicer(
             getPreferredLanguage(

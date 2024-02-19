@@ -62,7 +62,7 @@ const BannerSlider = ({ data }: BannerProps) => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3 max-lg:gap-1 p-4 max-lg:p-2 bg-black rounded-b-lg bg-opacity-30 text-white">
+            <div className="flex flex-col gap-3 max-lg:gap-1 p-4 max-lg:p-2 bg-black rounded-b-lg bg-opacity-50 text-white">
               <Link
                 to={`/post/${post.id}`}
                 className="text-2xl font-semibold max-md:text-sm"

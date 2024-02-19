@@ -32,7 +32,7 @@ const Category = () => {
 
   return (
     <div className="pb-5 flex flex-col gap-5">
-      {fetchPostsbyQueries.isLoading ? (
+      {fetchPostsbyQueries.isFetching ? (
         <Loader />
       ) : (
         <>

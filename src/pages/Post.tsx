@@ -4,7 +4,7 @@ import { GoDash as DashIcon } from "react-icons/go";
 import { CardPrimary, VideoOrImageCard } from "../components/cards";
 import { MdOutlineOpenInNew as OpenIcon } from "react-icons/md";
 import { useGetSinglePost, useLanguageStore } from "../hooks";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { PostProps } from "../types";
 import { useEffect } from "react";
 import { Loader } from "../components";
@@ -33,7 +33,7 @@ const Post = () => {
     getSinglePostQuery.refetch();
   }, [postId, selectedLanguage, getSinglePostQuery.refetch]);
 
-  return getSinglePostQuery.isLoading ? (
+  return getSinglePostQuery.isFetching ? (
     <Loader />
   ) : (
     <div className="w-full flex flex-col gap-5 mt-5 pb-10">
@@ -113,10 +113,13 @@ const Post = () => {
             {t("related")}
           </h1>
 
-          <div className="flex gap-1 items-center cursor-pointer">
+          <Link
+            to={`/category/${postData?.related[0]?.categoryId}`}
+            className="flex gap-1 items-center cursor-pointer"
+          >
             <h1 className="max-md:text-xs">{t("explore_all")}</h1>
             <OpenIcon className="text-xl" />
-          </div>
+          </Link>
         </div>
 
         <div className="grid grid-cols-3 gap-5 max-xl:grid-cols-2 max-md:grid-cols-1">
