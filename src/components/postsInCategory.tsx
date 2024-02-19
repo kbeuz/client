@@ -45,7 +45,7 @@ const PostsInCategory = ({
 
       <div className="grid grid-cols-1 gap-8 max-md:grid-cols-1">
         {dataWithCategory.Post.map((posts) => (
-          <CardPrimary key={posts.id} data={posts} />
+          <CardPrimary key={posts.id} data={posts} titleLength={100} />
         ))}
       </div>
     </div>

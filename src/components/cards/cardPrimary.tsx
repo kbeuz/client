@@ -9,7 +9,7 @@ const CardPrimary = ({
 }: {
   size?: "sm" | "base";
   data: SinglePostType;
-  titleLength: number;
+  titleLength?: number;
 }) => {
   return (
     <Link to={`/post/${data?.id}`} className="flex gap-4 max-md:flex-col">
