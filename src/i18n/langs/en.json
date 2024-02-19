@@ -1,0 +1,25 @@
+{
+    "video_posts": "Video posts",
+    "related": "Related",
+    "recommended": "Recommended",
+    "latest_posts": "Latest posts",
+    "explore_all": "Explore More",
+    "trendings": "Trendings",
+    "by_keyword": "on the word",
+    "result_count": "articles",
+    "not_found": {
+        "data": "No data found!",
+        "search": "Sorry, nothing is found by search!",
+        "page": "Page is not found!"
+    },
+    "footer": {
+        "items_list": {
+            "0": "About web-site",
+            "1": "Contact",
+            "2": "Advertisement",
+            "3": "KBE.uz team"
+        },
+        "descr": "The Web-Site was registered as a mass media in 2023 by the Information and Mass Communications Agency under the Administration of the President of the Republic of Uzbekistan.",
+        "organization": "Organization: “Kecha Bugun Ertaga” MChJ."
+    }
+}

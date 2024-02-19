@@ -1,0 +1,25 @@
+{
+    "video_posts": "Video yangiliklar",
+    "related": "Aloqador",
+    "recommended": "Tavsiya qilamiz",
+    "latest_posts": "So'ngi yangiliklar",
+    "explore_all": "Barchasi",
+    "trendings": "Trenddagilar",
+    "by_keyword": "so'zi bo'yicha",
+    "result_count": "ta maqola",
+    "not_found": {
+        "data": "Ma'lumotlar topilmadi!",
+        "search": "Afsus) Qidiruv bo'yicha hech qanday ma'lumot topilmadi!",
+        "page": "Sahifa topilmadi!"
+    },
+    "footer": {
+        "items_list": {
+            "0": "Sayt haqida",
+            "1": "Aloqa",
+            "2": "Reklama",
+            "3": "KBE.uz jamoasi"
+        },
+        "descr": "Web-Site OAV sifatida 2023 yil O'zbekiston Respublikasi Prezidenti Administratsiyasi huzuridagi Axborot va ommaviy kommunikatsiyalar agentligidan ro'yxatga olingan.",
+        "organization": "Muassasa: “Kecha Bugun Ertaga” MChJ."
+    }
+}
