@@ -8,7 +8,7 @@ const NavbarMobile = () => {
   const searchModal = useSearchModal();
   const menuBarSheet = useMenuSheet();
 
-  const theme = localStorage.getItem("theme") || "dark";
+  const theme = localStorage.getItem("theme") || "light";
 
   return (
     <>

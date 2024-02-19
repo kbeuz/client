@@ -9,7 +9,7 @@ import { useSearchModal } from "../../hooks";
 import { LuSearch as SearchIcon } from "react-icons/lu";
 
 const NavbarDesktop = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const searchModal = useSearchModal();
 
   useEffect(() => {
