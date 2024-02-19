@@ -62,10 +62,10 @@ const BannerSlider = ({ data }: BannerProps) => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3 max-lg:gap-1 p-4 max-lg:p-2 bg-black  rounded-b-lg bg-opacity-30 text-white">
+            <div className="flex flex-col gap-3 max-lg:gap-1 p-4 max-lg:p-2 bg-black rounded-b-lg bg-opacity-30 text-white">
               <Link
                 to={`/post/${post.id}`}
-                className="text-2xl font-semibold max-md:text-base"
+                className="text-2xl font-semibold max-md:text-sm"
               >
                 {getPreferredLanguage(
                   post.title_uz,
@@ -74,14 +74,6 @@ const BannerSlider = ({ data }: BannerProps) => {
                   post.title_krill
                 )}
               </Link>
-
-              <div className="text-sm max-md:text-[10px] flex gap-3 opacity-85">
-                <span>{dateFormatter(post.createdAt)}</span>
-                <div className="flex gap-1 items-center">
-                  <ViewsIcon className="text-sm self-center mt-[2px]" />
-                  <span>{post.views}</span>
-                </div>
-              </div>
 
               <div className="flex justify-center max-lg:mt-1 -mt-4 -ml-[3px] text-[18px] max-md:text-sm cursor-pointer text-white ">
                 {data.map((_, mapIndex) => (
