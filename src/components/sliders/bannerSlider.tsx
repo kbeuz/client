@@ -41,7 +41,7 @@ const BannerSlider = ({ data }: BannerProps) => {
       {data?.map((post, postIndex) => (
         <div
           key={postIndex}
-          className={`shadow-lg h-[400px] w-full max-md:w-full max-md:h-[220px] max-lg:w-full max-lg:h-[350px] bg-cover bg-center relative rounded-lg ${
+          className={`shadow-lg h-[400px] w-full max-xl:w-full max-md:h-[220px] max-xl:w-full max-lg:h-[350px] bg-cover bg-center relative rounded-lg ${
             index === postIndex ? "block" : "hidden"
           }`}
           style={{

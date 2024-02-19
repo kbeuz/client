@@ -9,7 +9,7 @@ const CardList = ({ data }: { data: SinglePostType }) => {
       to={`/post/${data.id}`}
       className="flex flex-col gap-2 pb-3 border-black dark:border-white border-b border-opacity-20 dark:border-opacity-40"
     >
-      <h1 className="text-sm font-semibold">
+      <h1 className="text-sm font-semibold max-xl:text-base max-md:text-sm">
         {getPreferredLanguage(
           data.title_uz,
           data.title_en,

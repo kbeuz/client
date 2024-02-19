@@ -30,8 +30,8 @@ const Home = () => {
       ) : (
         <div className="flex flex-col gap-5">
           {/* Banner with 4 posts in different categories */}
-          <div className="w-full flex gap-5 pt-5 max-md:flex-col">
-            <div className="w-[67%] flex flex-col gap-4 max-md:w-full">
+          <div className="w-full flex gap-5 pt-5 max-xl:flex-col">
+            <div className="w-[67%] flex flex-col gap-4 max-xl:w-full">
               <BannerSlider data={postsList?.pinned} />
               {postsList.oneInCategories.length >= 4 && (
                 <div className="grid grid-cols-2 gap-5 max-md:hidden">
@@ -45,9 +45,9 @@ const Home = () => {
 
             {/* Trendings */}
             {postsList?.trendings.length !== 0 && (
-              <div className="w-[33%] rounded-lg dark:bg-[#10205B] p-5 shadow-lg flex flex-col gap-4 max-md:w-full max-h-full">
+              <div className="w-[33%] rounded-lg dark:bg-[#10205B] p-5 shadow-lg flex flex-col gap-4 max-xl:w-full max-h-full">
                 <div className="flex">
-                  <h1 className="bg-primary text-white dark:text-white px-2 py-1 text-sm rounded-[5px]">
+                  <h1 className="bg-primary text-white dark:text-white px-2 py-1 text-sm rounded-[5px] max-xl:text-base max-md:text-xs">
                     {t("trendings")}
                   </h1>
                 </div>
@@ -76,7 +76,7 @@ const Home = () => {
                 </Link>
               </div>
 
-              <div className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
+              <div className="grid grid-cols-2 gap-8 max-xl:grid-cols-1">
                 {postsList?.latest?.map((posts) => (
                   <CardPrimary key={posts.id} data={posts} titleLength={100} />
                 ))}
