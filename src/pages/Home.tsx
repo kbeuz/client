@@ -33,58 +33,56 @@ const Home = () => {
           <div className="w-full flex gap-5 pt-5 max-md:flex-col">
             <div className="w-[67%] flex flex-col gap-4 max-md:w-full">
               <BannerSlider data={postsList?.pinned} />
-              <div className="grid grid-cols-2 gap-5 max-md:hidden">
-                {postsList.oneInCategories[0].posts && (
+              {postsList.oneInCategories.length >= 4 && (
+                <div className="grid grid-cols-2 gap-5 max-md:hidden">
                   <CardSecondary data={postsList.oneInCategories[0]} />
-                )}
-                {postsList.oneInCategories[1].posts && (
                   <CardSecondary data={postsList.oneInCategories[1]} />
-                )}
-                {postsList.oneInCategories[2].posts && (
                   <CardSecondary data={postsList.oneInCategories[2]} />
-                )}
-                {postsList.oneInCategories[3].posts && (
                   <CardSecondary data={postsList.oneInCategories[3]} />
-                )}
-              </div>
+                </div>
+              )}
             </div>
 
             {/* Trendings */}
-            <div className="w-[33%] rounded-lg dark:bg-[#10205B] p-5 shadow-lg flex flex-col gap-4 max-md:w-full max-h-full">
-              <div className="flex">
-                <h1 className="bg-primary text-white dark:text-white px-2 py-1 text-sm rounded-[5px]">
-                  {t("trendings")}
-                </h1>
-              </div>
+            {postsList?.trendings.length !== 0 && (
+              <div className="w-[33%] rounded-lg dark:bg-[#10205B] p-5 shadow-lg flex flex-col gap-4 max-md:w-full max-h-full">
+                <div className="flex">
+                  <h1 className="bg-primary text-white dark:text-white px-2 py-1 text-sm rounded-[5px]">
+                    {t("trendings")}
+                  </h1>
+                </div>
 
-              {postsList.trendings.map((posts) => (
-                <CardList key={posts.id} data={posts} />
-              ))}
-            </div>
+                {postsList.trendings.map((posts) => (
+                  <CardList key={posts.id} data={posts} />
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Latest posts */}
-          <div className="rounded-lg shadow-lg dark:bg-[#10205B] p-6 shadow-lg flex flex-col gap-4 max-md:w-full max-h-full">
-            <div className="flex justify-between text-primary dark:text-white">
-              <h1 className="py-1 text-xl rounded-[5px] font-semibold max-md:text-base">
-                {t("latest_posts")}
-              </h1>
+          {postsList?.latest?.length !== 0 && (
+            <div className="rounded-lg shadow-lg dark:bg-[#10205B] p-6 shadow-lg flex flex-col gap-4 max-md:w-full max-h-full">
+              <div className="flex justify-between text-primary dark:text-white">
+                <h1 className="py-1 text-xl rounded-[5px] font-semibold max-md:text-base">
+                  {t("latest_posts")}
+                </h1>
 
-              <Link
-                to={"/latest"}
-                className="flex gap-1 items-center cursor-pointer"
-              >
-                <h1 className="max-md:text-xs"> {t("explore_all")}</h1>
-                <OpenIcon className="text-xl" />
-              </Link>
-            </div>
+                <Link
+                  to={"/latest"}
+                  className="flex gap-1 items-center cursor-pointer"
+                >
+                  <h1 className="max-md:text-xs"> {t("explore_all")}</h1>
+                  <OpenIcon className="text-xl" />
+                </Link>
+              </div>
 
-            <div className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
-              {postsList?.latest?.map((posts) => (
-                <CardPrimary key={posts.id} data={posts} />
-              ))}
+              <div className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
+                {postsList?.latest?.map((posts) => (
+                  <CardPrimary key={posts.id} data={posts} />
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Video posts */}
           {postsList?.videoPosts.length >= 6 && (
