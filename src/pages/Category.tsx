@@ -52,7 +52,7 @@ const Category = () => {
                 <h1>{t("not_found.data")}</h1>
               ) : (
                 postsData?.post.map((posts) => (
-                  <CardPrimary key={posts.id} data={posts} />
+                  <CardPrimary key={posts.id} data={posts} titleLength={100} />
                 ))
               )}
             </div>
