@@ -19,16 +19,6 @@ const Post = () => {
 
   const postData: PostProps | undefined = getSinglePostQuery.data?.data;
 
-  const sanitizeHtml = (html: any) => {
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    const elements = doc.body.getElementsByTagName("*");
-    for (let i = 0; i < elements.length; i++) {
-      const element = elements[i];
-      element["style"].color = "";
-    }
-    return doc.body.innerHTML;
-  };
-
   useEffect(() => {
     getSinglePostQuery.refetch();
   }, [postId, selectedLanguage, getSinglePostQuery.refetch]);
@@ -71,15 +61,13 @@ const Post = () => {
           </div>
 
           <div
-            className="flex flex-col gap-3 mt-2 "
+            className="flex flex-col gap-3 mt-2"
             dangerouslySetInnerHTML={{
-              __html: sanitizeHtml(
-                getPreferredLanguage(
-                  postData.post.descr_uz,
-                  postData.post.descr_en,
-                  postData.post.descr_ru,
-                  postData.post.descr_krill
-                )
+              __html: getPreferredLanguage(
+                postData.post.descr_uz,
+                postData.post.descr_en,
+                postData.post.descr_ru,
+                postData.post.descr_krill
               ),
             }}
           ></div>
