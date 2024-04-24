@@ -27,12 +27,12 @@ const Category = () => {
   }, [categoryId, limit]);
 
   const handleLoadMore = () => {
-    setLimit(limit + 1);
+    setLimit(limit + 10);
   };
 
   return (
     <div className="pb-5 flex flex-col gap-5">
-      {fetchPostsbyQueries.isFetching ? (
+      {fetchPostsbyQueries.isLoading ? (
         <Loader />
       ) : (
         <>

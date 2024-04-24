@@ -13,7 +13,10 @@ const CardPrimary = ({
 }) => {
   return (
     <Link to={`/post/${data?.id}`} className="flex gap-4 max-md:flex-col">
-      <img src={data?.cover_image} className={`rounded-lg max-h-48 bg-cover`} />
+      <img
+        src={data?.cover_image}
+        className={`rounded-lg xl:max-w-44 xl:min-w-40 xl:max-h-24 max-h-48 bg-cover`}
+      />
 
       <div className="flex flex-col gap-1 justify-center max-md:gap-2 xl:w-[400px] md:max-w-[400px]">
         <h1 className={`text-base dark:text-white font-medium break-normal`}>
