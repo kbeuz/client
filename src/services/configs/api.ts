@@ -1,10 +1,7 @@
 import axios from "axios";
 
-// const baseURL_Local = "http://localhost:3000/api/v1";
-const baseURL_Prod = "https://api.kbe.uz/api/v1";
-
 const api = axios.create({
-  baseURL: baseURL_Prod,
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 api.interceptors.request.use(async (config) => {

@@ -8,7 +8,7 @@ import { Link, useParams } from "react-router-dom";
 import { PostProps } from "../types";
 import { useEffect } from "react";
 import { Loader } from "../components";
-import { getPreferredLanguage } from "../lib";
+import { dateFormatter, getPreferredLanguage } from "../lib";
 import { useTranslation } from "react-i18next";
 
 const Post = () => {
@@ -52,7 +52,7 @@ const Post = () => {
             <DashIcon className="mt-1" />
 
             <div className="flex gap-2 text-sm opacity-50 mt-1">
-              <h1>20.03.2023, 20:05</h1>
+              <h1>{dateFormatter(postData.post.createdAt)}</h1>
               <div className="flex gap-1 items-center">
                 <ViewsIcon className="text-base mt-[2px]" />
                 <span>{postData.post.views || 0}</span>

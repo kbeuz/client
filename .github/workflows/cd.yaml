@@ -1,0 +1,27 @@
+name: kbe.uz / CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Connect VPS and deploy changes
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd kbe.uz/client/
+            git pull origin main
+            npm install
+            npm run build
+            rm -r /var/www/kbe.uz/client/*
+            cp -r dist/* /var/www/kbe.uz/client/
+            sudo systemctl restart nginx
+            sudo systemctl status nginx
